@@ -345,7 +345,7 @@ export default function App() {
                 </div>
               </div>
               <a
-                href="https://t.me/KILLVPN_bot"
+                href="https://t.me/killlvpn_bot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-shrink-0 flex items-center gap-2 px-6 py-3 rounded-xl font-display text-sm tracking-wider font-medium transition-all duration-300 hover:opacity-90 active:scale-95"
