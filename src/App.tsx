@@ -308,6 +308,54 @@ export default function App() {
               ))}
             </div>
 
+            {/* Online counter */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 animate-fade-in">
+              <div className="flex items-center gap-3 px-6 py-3 rounded-full border" style={{ borderColor: "rgba(0,229,200,0.3)", background: "rgba(0,229,200,0.06)" }}>
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: "#00e5c8" }} />
+                  <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#00e5c8" }} />
+                </span>
+                <span className="font-display text-sm tracking-wider" style={{ color: "#00e5c8" }}>
+                  2 300 567
+                </span>
+                <span className="font-body text-sm text-muted-foreground">человек сейчас онлайн</span>
+              </div>
+            </div>
+
+            {/* Telegram Bot */}
+            <div className="mb-8 bg-glass border rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-5 animate-fade-in" style={{ borderColor: "rgba(42,171,238,0.25)", background: "linear-gradient(135deg, rgba(42,171,238,0.06), rgba(0,0,0,0))" }}>
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ background: "rgba(42,171,238,0.15)", border: "1px solid rgba(42,171,238,0.3)" }}>
+                <span className="text-3xl">✈️</span>
+              </div>
+              <div className="flex-1 text-center sm:text-left">
+                <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                  <span className="font-display text-lg font-bold text-white tracking-wider">KILLVPN Bot</span>
+                  <span className="px-2 py-0.5 rounded-full text-xs font-body" style={{ background: "rgba(42,171,238,0.15)", color: "#2AABEE", border: "1px solid rgba(42,171,238,0.3)" }}>Telegram</span>
+                </div>
+                <p className="font-body text-sm text-muted-foreground mb-3">
+                  Управляй VPN прямо из Telegram — быстро, удобно, без лишних шагов. Получай уведомления и ключи доступа в один клик.
+                </p>
+                <div className="flex flex-wrap gap-3 justify-center sm:justify-start text-xs font-body text-muted-foreground">
+                  {["Мгновенные уведомления", "Управление ключами", "Статус защиты"].map((f, i) => (
+                    <span key={i} className="flex items-center gap-1">
+                      <Icon name="Check" size={11} className="text-primary" />
+                      {f}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <a
+                href="https://t.me/KILLVPN_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 flex items-center gap-2 px-6 py-3 rounded-xl font-display text-sm tracking-wider font-medium transition-all duration-300 hover:opacity-90 active:scale-95"
+                style={{ background: "linear-gradient(135deg, #2AABEE, #1a8bbf)", color: "#fff" }}
+              >
+                <Icon name="Send" size={16} />
+                ОТКРЫТЬ БОТА
+              </a>
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               {BLOCKS.map((b, i) => (
                 <button
