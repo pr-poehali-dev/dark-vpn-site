@@ -61,6 +61,14 @@ export default function App() {
     instagram: { active: false, startTime: null, elapsed: 0 },
   });
   const [user, setUser] = useState({ name: "Пользователь", email: "" });
+  const [onlineCount, setOnlineCount] = useState(2300567);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setOnlineCount(prev => prev + Math.floor((Math.random() - 0.4) * 50));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
   const [mobileMenu, setMobileMenu] = useState(false);
 
   useEffect(() => {
@@ -316,7 +324,7 @@ export default function App() {
                   <span className="relative inline-flex rounded-full h-3 w-3" style={{ background: "#00e5c8" }} />
                 </span>
                 <span className="font-display text-sm tracking-wider" style={{ color: "#00e5c8" }}>
-                  2 300 567
+                  {onlineCount.toLocaleString("ru-RU")}
                 </span>
                 <span className="font-body text-sm text-muted-foreground">человек сейчас онлайн</span>
               </div>
